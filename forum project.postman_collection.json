@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "3fa2f75d-ee74-4508-8178-babd1f3d7cd9",
+		"name": "forum project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_device_token\":\"121213212\",\r\n    \"user_device_type\":\"iphone\",\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"Abcd@1234\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admine@gmail.com\",\r\n    \"password\":\"Abcd@1234\",\r\n    \"confirm_password\":\"Abcd@1234\",\r\n    \"role\":\"admin\",\r\n    \"name\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJhYmIwZWQ0M2Q4N2RhODIwMDg1IiwiaWF0IjoxNzAzMzI5MDg0fQ.EKCvOB9TtmrsoBP3I26FCRZrGQTgSl26yKbyEug50k8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/get-request",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"get-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJhYmIwZWQ0M2Q4N2RhODIwMDg1IiwiaWF0IjoxNzAzMzI5MDg0fQ.EKCvOB9TtmrsoBP3I26FCRZrGQTgSl26yKbyEug50k8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6586bf73434cbb3c70d6425a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/accept-request",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"accept-request"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "add post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"post1\",\r\n    \"description\":\"description 1 lorem loref ipsum\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/add-post",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"add-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6586c89f4688be6a7807c1db\",\r\n    \"title\":\"new post 1\",\r\n    \"description\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/edit-post",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"edit-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6586c89f4688be6a7807c1db\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/delete-post",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"delete-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3018/api/getallpost",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"getallpost"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "add comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postid\":\"6586ceffc2c1c43692fd2109\",\r\n    \"comment\":\"this is comment for post 2 ...........\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/addcomments",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"addcomments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post\":\"6586ceffc2c1c43692fd2109\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/getallcomments",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"getallcomments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reactions",
+			"item": [
+				{
+					"name": "add reaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postid\":\"6586ceffc2c1c43692fd2109\",\r\n    \"reaction\":\"like\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/addreaction",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"addreaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all reactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post\":\"6586ceffc2c1c43692fd2109\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/getallreactions",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"getallreactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userbanned / userunbanned",
+			"item": [
+				{
+					"name": "banned / unbanned",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIiwidXNlcklkIjoiNjU4NmJmNzM0MzRjYmIzYzcwZDY0MjVhIiwiaWF0IjoxNzAzMzI5ODA4fQ.3CKLpV0qztVtpuc7vdy8m_fjNJd3P4tyT8nJlQxeDvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6586bf73434cbb3c70d6425a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3018/api/user-isbanned",
+							"host": [
+								"localhost"
+							],
+							"port": "3018",
+							"path": [
+								"api",
+								"user-isbanned"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
